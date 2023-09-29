@@ -1,3 +1,7 @@
+## [Calificación Code Climate &nbsp;](https://codeclimate.com/github/dylanson25/bedu-pf-fsd-frontend-2023)
+
+## Calificación Deep Scan &nbsp; [![DeepScan grade](https://deepscan.io/api/teams/16820/projects/25575/branches/802141/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=16820&pid=25575&bid=802141)
+
 # bedu-pf-fsd-frontend-2023 - Devjobs web app
 
 Backend proyecto final para bootcamp de Full Stack Developer JavaScript de BEDU-Santander 2023
