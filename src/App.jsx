@@ -2,10 +2,19 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./assets/styles/App.css";
+import Api from "./utils/Api";
 
 function App() {
   const [count, setCount] = useState(0);
-
+  const getUsers = async () => {
+    try {
+      const { data } = await Api.get("user");
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  getUsers();
   return (
     <>
       <div>
