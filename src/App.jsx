@@ -23,6 +23,20 @@ function App() {
         </Routes>
       </Router>
     </>
+    // import CssBaseline from "@mui/material/CssBaseline";
+    // import { ThemeProvider } from "@mui/material";
+    // import theme from "./utils/ThemeConfig.js";
+
+    // import "./assets/styles/App.css";
+
+    // function App() {
+    //   return (
+    //     <ThemeProvider theme={theme("light")}>
+    //       <CssBaseline />
+    //       <h1>WEBDEVJOBS</h1>
+    //       <hr />
+    //       Hola mundo
+    //     </ThemeProvider>
   );
 }
 
