@@ -1,3 +1,7 @@
+import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider } from "@mui/material";
+import theme from "./utils/theme/ThemeConfig";
+
 import "./assets/styles/App.css";
 import Api from "./utils/Api";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";

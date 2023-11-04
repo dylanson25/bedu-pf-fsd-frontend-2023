@@ -1,4 +1,5 @@
-import { createTheme } from "@mui/material";
+import { createTheme, responsiveFontSizes } from "@mui/material";
+import styleOverrides from "./stylesOverrides";
 
 const lightPalette = {
   primary: {
@@ -31,11 +32,21 @@ const darkPalette = {
 };
 
 const theme = (mode = "light") =>
-  createTheme({
-    palette: {
-      mode,
-      ...(mode === "light" ? lightPalette : darkPalette),
-    },
-  });
+  responsiveFontSizes(
+    createTheme({
+      typography: {
+        fontFamily: "Kumbh Sans, 'Arial','Brush Script MT'",
+      },
+      components: {
+        MuiCssBaseline: {
+          styleOverrides: styleOverrides,
+        },
+      },
+      palette: {
+        mode,
+        ...(mode === "light" ? lightPalette : darkPalette),
+      },
+    })
+  );
 
 export default theme;
