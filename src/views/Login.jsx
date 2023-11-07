@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../redux/userSlice";
 import { useNavigate } from "react-router-dom";
 
-export const Login = () => {
+const Login = () => {
   //States
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -51,8 +51,9 @@ export const Login = () => {
         ></input>
         <br />
         <button type="submit">{loading ? "...loading" : "LOGIN"}</button>
-        {error && (<div style={{ backgroundColor: "red" }}>{error}</div>)}
+        {error && <div style={{ backgroundColor: "red" }}>{error}</div>}
       </form>
     </>
   );
 };
+export default Login;
