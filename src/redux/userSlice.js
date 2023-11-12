@@ -14,7 +14,7 @@ export const loginUser = createAsyncThunk(
       `${process.env.API_END_POINT}login`,
       userCredentials
     );
-    const response = await request.data.jwt;
+    const response = await request.data;
     localStorage.setItem("user", JSON.stringify(response));
     return response;
   }

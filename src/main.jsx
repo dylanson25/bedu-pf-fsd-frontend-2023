@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 
 import CssBaseline from "@mui/material/CssBaseline";
-import { ThemeProvider, StyledEngineProvider } from "@mui/material";
+import { ThemeProvider, StyledEngineProvider, Container } from "@mui/material";
 import theme from "./utils/theme/ThemeConfig";
 import "./assets/styles/index.css";
 
@@ -15,7 +15,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <ThemeProvider theme={theme("light")}>
         <StyledEngineProvider injectFirst>
           <CssBaseline />
-          <App />
+          <Container maxWidth="lg">
+            <App />
+          </Container>
         </StyledEngineProvider>
       </ThemeProvider>
     </Provider>
