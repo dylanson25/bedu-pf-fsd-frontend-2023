@@ -25,8 +25,9 @@ const Home = () => {
       <div className="home-view">
         {user ? (
           <>
-            <h4>Hola pendiente</h4>
-            <h5>Tu token es {user}</h5>
+            <h4>Hola {user.fullName}</h4>
+            <h4>con email {user.email}</h4>
+            <h5>Tu token es {user.jwt}</h5>
             <button onClick={handleLogout}>LOGOUT</button>
           </>
         ) : (
