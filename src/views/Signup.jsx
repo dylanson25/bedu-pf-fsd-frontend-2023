@@ -53,7 +53,7 @@ const Signup = () => {
         .max(60, "Cannot exceed 60 characters")
         .required("Password is a required field")
         .matches(
-          "^(?=.*[a-z])(?=.*[A-Z])(?=.*/d)(?=.*[@$!%*?&])[A-Za-z/d@$!%*?&]{10,60}$",
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,60}$/,
           "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character"
         ),
     }),
@@ -174,7 +174,9 @@ const Signup = () => {
                             ? true
                             : false
                         }
-                        helperText={formik.errors.firstName}
+                        helperText={
+                          formik.touched.firstName && formik.errors.firstName
+                        }
                       />
                     </Grid>
                   </Grid>
@@ -202,7 +204,9 @@ const Signup = () => {
                             ? true
                             : false
                         }
-                        helperText={formik.errors.lastName}
+                        helperText={
+                          formik.touched.lastName && formik.errors.lastName
+                        }
                       />
                     </Grid>
                   </Grid>
@@ -226,7 +230,7 @@ const Signup = () => {
                   error={
                     formik.touched.email && formik.errors.email ? true : false
                   }
-                  helperText={formik.errors.email}
+                  helperText={formik.touched.email && formik.errors.email}
                 ></TextField>
                 <FormLabel>Phone number*</FormLabel>
                 <TextField
@@ -246,7 +250,9 @@ const Signup = () => {
                       ? true
                       : false
                   }
-                  helperText={formik.errors.phoneNumber}
+                  helperText={
+                    formik.touched.phoneNumber && formik.errors.phoneNumber
+                  }
                 />
                 <FormLabel>Password*</FormLabel>
                 <TextField
@@ -269,9 +275,9 @@ const Signup = () => {
                       ? true
                       : false
                   }
-                  helperText={formik.errors.password}
+                  helperText={formik.touched.password && formik.errors.password}
                 ></TextField>
-                <Button variant="outlined" color="secondary" type="submit">
+                <Button variant="outlined" type="submit">
                   Register
                 </Button>
               </form>
