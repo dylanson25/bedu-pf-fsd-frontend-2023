@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "../redux/userSlice";
+import { loginUser, setAUTH } from "../redux/auth";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import {
   FormLabel,
@@ -26,7 +26,7 @@ const Login = () => {
   const [toggleErrorMessage, setToggleErrorMessage] = useState(true);
 
   //Redux states
-  const { loading, error } = useSelector((state) => state.user);
+  const { loading, error } = useSelector((state) => state.auth);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -63,8 +63,9 @@ const Login = () => {
       };
 
       //Make request to backend using redux and redirect if credentials are correct
-      dispatch(loginUser(userCredentials)).then((result) => {
-        if (result.payload) {
+      dispatch(loginUser(userCredentials)).then(({ payload }) => {
+        if (payload) {
+          dispatch(setAUTH(payload));
           resetForm();
           navigate("/");
         }

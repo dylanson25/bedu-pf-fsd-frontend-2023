@@ -4,10 +4,10 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 
+import "./assets/styles/index.scss";
 import CssBaseline from "@mui/material/CssBaseline";
-import { ThemeProvider, StyledEngineProvider, Container } from "@mui/material";
+import { ThemeProvider, StyledEngineProvider } from "@mui/material";
 import theme from "./utils/theme/ThemeConfig";
-import "./assets/styles/index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -15,9 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <ThemeProvider theme={theme("light")}>
         <StyledEngineProvider injectFirst>
           <CssBaseline />
-          <Container maxWidth="lg">
-            <App />
-          </Container>
+          <App />
         </StyledEngineProvider>
       </ThemeProvider>
     </Provider>

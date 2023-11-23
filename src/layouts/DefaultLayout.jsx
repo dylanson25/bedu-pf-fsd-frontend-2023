@@ -1,15 +1,11 @@
-// Aqui iran elementos que compartan varias pantallas como \
-// el header etc..
 import { Fragment } from "react";
-import { Typography, Container } from "@mui/material";
+import { Container } from "@mui/material";
+import { Header } from "../components";
 
 const DefaultLayout = ({ children }) => {
   return (
     <>
-      {/* Sacar a componente */}
-      <header>
-        <Typography variant="h5">WEBDEVJOBS</Typography>
-      </header>
+      <Header />
       <Container maxWidth="lg" className="main">
         <Fragment>{children}</Fragment>
       </Container>

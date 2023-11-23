@@ -7,6 +7,15 @@
   border-bottom-left-radius: 100px;
 }
 .triangle {
-  position: relative;
+  position: absolute;
+  z-index: 0;
   overflow: visible;
+}
+.MuiToolbar-root {
+  margin: auto;
+  margin-top: 44px;
+  max-width: 995px;
+  padding: 0;
+  width: 100%;
+  z-index: 1;
 }

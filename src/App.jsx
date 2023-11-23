@@ -1,24 +1,22 @@
-import "./assets/styles/App.css";
-import Api from "./utils/Api";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home, Login } from "./views";
+import { Home, Login, Signup } from "./views";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { checkAUTH } from "./redux/auth";
 
 function App() {
-  const getUsers = async () => {
-    try {
-      const { data } = await Api.get("user");
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  getUsers();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(checkAUTH());
+  }, []);
+
   return (
     <>
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </Router>
     </>
