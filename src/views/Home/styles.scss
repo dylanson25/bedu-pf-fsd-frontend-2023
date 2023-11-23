@@ -1,0 +1,14 @@
+.home-view {
+  display: flex;
+  height: auto;
+  width: 100%;
+}
+.post-container {
+  margin: 0 auto;
+  max-width: 1110px;
+  width: 100%;
+  display: grid;
+  gap: 30px;
+  place-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(228px, 350px));
+}

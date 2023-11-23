@@ -9,7 +9,7 @@ const darkPalette = {
     contrastText: "#FFF",
   },
   background: {
-    default: "#19202D",
+    default: "#121721",
   },
 };
 export default darkPalette;

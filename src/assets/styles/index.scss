@@ -1,0 +1,23 @@
+@import "bootstrap/scss/bootstrap-utilities.scss";
+
+html,
+body,
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+}
+.main {
+  padding: 24px;
+  max-height: calc(100% - 161px);
+  overflow-y: auto;
+  width: 100%;
+  flex-grow: 1;
+}
+@include media-breakpoint-down(sm) {
+  .header {
+    border-bottom-left-radius: 0;
+  }
+}

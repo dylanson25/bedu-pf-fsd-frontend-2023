@@ -45,8 +45,8 @@ const Signup = () => {
         .required("Email is a required field")
         .email("Email format is incorrect"),
       phoneNumber: Yup.number()
-        .max(10, "Must have 10 digits")
-        .min(10, "Must have 10 digits")
+        // .max(11, "Must have less than 11 digits")
+        // .min(10, "Must have 10 digits 0")
         .required("Phone number is a required field"),
       password: Yup.string()
         .min(10, "Must be at least 10 characters")
@@ -78,9 +78,12 @@ const Signup = () => {
 
   const navigate = useNavigate();
 
-  const registerAPIRequest = async (user) => {
+  const registerAPIRequest = async (data) => {
     try {
-      const request = await Api.post(`${process.env.API_END_POINT}user`, user);
+      const request = await Api.post(`user`, {
+        ...data,
+        phoneNumber: String(data.phoneNumber),
+      });
       const response = await request.data;
       return response;
     } catch (e) {

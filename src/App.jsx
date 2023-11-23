@@ -1,16 +1,35 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home, Login } from "./views";
-import Signup from "./views/Signup";
+import { Home, Login, Signup } from "./views";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { checkAUTH } from "./redux/auth";
+import "./assets/styles/index.scss";
+import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider, StyledEngineProvider } from "@mui/material";
+import theme from "./utils/theme/ThemeConfig";
 
 function App() {
+  const { DARK } = useSelector((state) => state.darkMode);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(checkAUTH());
+  }, []);
+
   return (
-    <Router>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Signup />} />
-      </Routes>
-    </Router>
+    <ThemeProvider theme={theme(DARK ? "dark" : "light")}>
+      <StyledEngineProvider injectFirst>
+        <CssBaseline />
+        <Router>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
+        </Router>
+      </StyledEngineProvider>
+    </ThemeProvider>
   );
 }
 
