@@ -54,9 +54,10 @@ const Header = () => {
               <hr />
             </>
           )}
-          <div className="d-flex align-items-center justify-content-end">
+          <div className="d-flex align-items-center justify-content-center">
+            <Brightness7 />
             <Switch checked={theme} color="default" onChange={onChangeTheme} />
-            {theme ? <Nightlight /> : <Brightness7 />}
+            <Nightlight />
           </div>
         </div>
       </Toolbar>

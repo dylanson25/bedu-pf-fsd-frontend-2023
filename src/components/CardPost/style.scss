@@ -1,5 +1,13 @@
 .card-post {
   padding: 32px;
+  padding-top: 40px;
+  position: relative;
+  overflow: visible;
+  .img-company {
+    position: absolute;
+    top: -20px;
+    border-radius: 10px;
+  }
   .MuiCardContent-root {
     padding: 0;
     .text-puesto {
