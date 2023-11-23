@@ -11,6 +11,13 @@ const theme = (mode = "light") =>
         MuiCssBaseline: {
           styleOverrides: stylesOverrides,
         },
+        MuiCard: {
+          styleOverrides: {
+            root: {
+              backgroundColor: mode === "light" ? "white" : "#19202D",
+            },
+          },
+        },
       },
       palette: {
         mode,
