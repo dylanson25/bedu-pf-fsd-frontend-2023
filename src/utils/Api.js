@@ -5,7 +5,7 @@ class ApiClass {
     this.request = [];
     this._axios = axios.create({
       baseURL: apiEndPoint || "",
-      Headers: {},
+      headers: {},
     });
     this._interceptors();
   }
@@ -105,7 +105,7 @@ class ApiClass {
       ...(data || {}),
     };
     const R = { url: `${method}:${url}`, cancelSource };
-    R.axios = this._axios[method](`${url}`, axiosRequest, { headers });
+    R.axios = this._axios[method](`${url}`, axiosRequest, { ...headers });
     this.request.push(R);
     return R.axios;
   }

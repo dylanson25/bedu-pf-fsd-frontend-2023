@@ -194,7 +194,7 @@ const Login = () => {
                 </Button>
               </form>
               <small>
-                Need an account? <Link to="/register">Register here</Link>
+                Need an account? <Link to="/signup">Register here</Link>
               </small>
             </CardContent>
           </Card>

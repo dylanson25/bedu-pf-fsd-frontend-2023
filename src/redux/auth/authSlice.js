@@ -21,6 +21,7 @@ export const authSlice = createSlice({
     setAUTH: (state, payload) => {
       const { payload: p } = payload;
       const data = {
+        id: p.id,
         email: p.email,
         fullName: p.fullName,
         Authorization: p.jwt,
