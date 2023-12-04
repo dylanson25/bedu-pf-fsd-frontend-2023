@@ -8,6 +8,7 @@ import "./assets/styles/index.scss";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider, StyledEngineProvider } from "@mui/material";
 import theme from "./utils/theme/ThemeConfig";
+import PostForm from "./views/PostForm";
 
 function App() {
   const { DARK } = useSelector((state) => state.darkMode);
@@ -26,6 +27,7 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/jobPost" element={<PostForm />} /> {/* This should be a protected route */}
           </Routes>
         </Router>
       </StyledEngineProvider>
